@@ -1,0 +1,27 @@
+
+<div class="wrapper"  >
+  <form class="form-signin" [formGroup]="validator">       
+    <h2 class="form-signin-heading">Please login</h2>
+    <input type="text" class="form-control" name="username" placeholder="Email Address" formControlName="email" required="" autofocus="" />
+    <input type="password" class="form-control" name="password" placeholder="Password" formControlName="password" required=""/>      
+    
+    <div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="this.login()">Entrar</button>
+      <button class="btn btn-lg btn-primary btn-block" routerLink="/registro" type="submit">Registrar</button>   
+
+    </div>
+    <div>
+      <div  (click)="this.loginGoogle()" id="gSignInWrapper">
+        <div id="customBtn" class="customGPlusSignIn">
+          <span class="icon"></span>
+          <span class="buttonText">Google</span>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+</div>
+
+<div *ngIf="!this.authS.ready">
+  splahScreen
+</div>

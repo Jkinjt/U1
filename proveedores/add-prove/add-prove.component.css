@@ -1,0 +1,31 @@
+h2{
+    text-align: center;
+    color: rgb(7, 73, 7);
+}
+.rellenar{
+    block-size: 100px;
+    margin-top: 10px;
+    
+}
+.alert.alert-danger{
+    font-size: small;   
+}
+
+input.ng-valid.ng-touched {
+    border-left: 5px solid #37d351;
+   }
+
+input.ng-invalid.ng-invalid{
+    background-color: rgb(184, 133, 133);
+}
+
+#table{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#error{
+    text-align: center;
+    background-color: red;
+    color: black;
+}

@@ -1,0 +1,106 @@
+<h2>Editar proveedor</h2>
+<form class="row g-3" id="table" (ngSubmit)="onSubmit()" [formGroup]="validator">
+  <div class="col-md-7">
+    <div class="rellenar">
+      <label for="inputEmail4" class="form-label">Nombre</label>
+      <input type="text" class="form-control" placeholder="Nombre" name="nombre" formControlName="nombre" required>
+      <p class="alert alert-danger" *ngIf="validator.controls.nombre.invalid">
+        Por favor introduzca un nombre correcto.
+      </p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="rellenar">
+      <label for="inputPassword4" class="form-label">C.I.F.</label>
+      <input type="text" class="form-control" placeholder="C.I.F" name="cif" formControlName="cif">
+      <p class="alert alert-danger" *ngIf="validator.controls.cif.invalid">
+        Por favor introduzca un C.I.F.
+      </p>
+    </div>
+  </div>
+  <div class="col-7">
+    <div class="rellenar">
+      <label for="inputAddress" class="form-label">Dirección</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="Dirección" name="direccion"
+        formControlName="direccion">
+      <p class="alert alert-danger" *ngIf="validator.controls.direccion.invalid">
+        Por favor introduzca una direccion correcta.
+      </p>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="rellenar">
+
+      <label for="inputAddress2" class="form-label">Código Postal</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Código Postal" name="cp"
+        formControlName="cp">
+      <p class="alert alert-danger" *ngIf="validator.controls.cp.invalid">
+        Por favor introduzca un codigo postal correcto.
+      </p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="rellenar">
+
+      <label for="inputCity" class="form-label">Localidad</label>
+      <input type="text" class="form-control" id="inputCity" placeholder="Localidad" name="localidad"
+        formControlName="localidad">
+      <p class="alert alert-danger" *ngIf="validator.controls.localidad.invalid">
+        Por favor introduzca una localidad correcta.
+      </p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="rellenar">
+      <label for="inputState" class="form-label">Provincia</label>
+      <select id="inputState" class="form-select" name="provincia" formControlName="provincia">
+        <option selected value="">Seleccione Provincia </option>
+        <option *ngFor="let provincia of provincias" [value]="provincia">{{provincia}} </option>
+      </select>
+
+      <p class="alert alert-danger" *ngIf="validator.controls.provincia.invalid">
+        Por favor introduzca una provincia correcta.
+      </p>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="rellenar">
+      <label for="inputAddress" class="form-label">Télefono</label>
+      <input type="tel" class="form-control" placeholder="Télefono" name="telefono" formControlName="telefono">
+      <p class="alert alert-danger" *ngIf="!validator.controls.telefono.valid">
+        Por favor introduzca un telefono correcto.
+      </p>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="rellenar">
+      <label for="inputAddress" class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Correo Electrónico" name="email"
+        formControlName="email">
+      <p class="alert alert-danger" *ngIf="validator.controls.email.invalid">
+        Por favor introduzca una dirección de correo correcta.
+      </p>
+    </div>
+
+  </div>
+  <div class="col-4">
+    <div class="rellenar">
+      <label for="inputAddress" class="form-label">Persona de contacto</label>
+      <input type="text" class="form-control" placeholder="Persona de contacto" name="contacto"
+        formControlName="contacto">
+      <p class="alert alert-danger" *ngIf="validator.controls.contacto.invalid">
+        Por favor introduzca un nombre correcto.
+      </p>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Añadir</button>
+    <button type="submit" class="btn btn-primary" routerLink="/proveedores">Cancelar</button>
+  </div>
+</form>
+<div id="error" *ngIf="!isValid" [class]="alertClass" role="alert">
+  <ul>
+    {{errorMessage}}
+  </ul>
+
+</div>

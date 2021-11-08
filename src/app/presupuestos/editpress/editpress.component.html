@@ -1,0 +1,76 @@
+
+<a class="btn btn-primary float-md-right" 
+ routerLink="/presupuestos">Regresar al listado</a>
+ <br>
+<form class="row g-3" (ngSubmit)="onSubmit()" [formGroup]="validator" >
+    <div class="col-md-4">
+      <label  class="form-label">Proveedor</label>
+      <input type="text" class="form-control is-valid"  
+      placeholder="Proveedor" name="proveedor" formControlName="proveedor" required>
+      <div *ngIf="validator.controls.proveedor.valid">
+        Correcto
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label  class="form-label">Fecha</label>
+      <input type="date" class="form-control is-valid" 
+      placeholder="Fecha" name="fecha" formControlName="fecha" required>
+      <div *ngIf="validator.controls.fecha.valid">
+        Correcto
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label  class="form-label">Concepto</label>
+      <div class="input-group has-validation">
+        <input type="text" class="form-control is-invalid" 
+        aria-describedby="inputGroupPrepend3" 
+        placeholder="Concepto" name="concepto" formControlName="concepto" required>
+        <div *ngIf="validator.controls.concepto.invalid" class="invalid-feedback">
+          Por favor introduce el concepto correcto
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationServer03" class="form-label">Base</label>
+      <input type="number" class="form-control is-invalid" 
+       aria-describedby="validationServer03Feedback" placeholder="Base" 
+       name="base" formControlName="base" required>
+      <div *ngIf="validator.controls.base.invalid" class="invalid-feedback">
+        La base no es valida
+      </div>
+    </div>
+   
+    <div class="col-md-3">
+      <label for="validationServer05" class="form-label">Tipo</label>
+      <input type="text" class="form-control is-invalid" 
+       aria-describedby="validationServer05Feedback" placeholder="Tipo"
+       name="tipo" formControlName="tipo" required>
+      <div *ngIf="validator.controls.tipo.invalid" class="invalid-feedback">
+        Por favor introduce el concepto correcto
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationServer05" class="form-label">I.V.A</label>
+      <input type="number" class="form-control is-invalid"
+       aria-describedby="validationServer05Feedback" placeholder="I.V.A"
+       name="iva" formControlName="iva"  required>
+      <div *ngIf="validator.controls.iva.invalid" class="invalid-feedback">
+        Por favor introduce el I.V.A correcto
+      </div>
+    </div>
+    <div class="col-md-3">
+        <label for="validationServer05" class="form-label">Total</label>
+        <input type="number" class="form-control is-invalid" 
+         aria-describedby="validationServer05Feedback" placeholder="Total" 
+        name="total" formControlName="total" required>
+        <div *ngIf="validator.controls.total.invalid" class="invalid-feedback">
+          Por favor introduzca el total correcto
+        </div>
+      </div>
+    
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Añadir</button>
+      <a class="btn btn-danger" routerLink="/presupuestos">Cancelar</a>
+    </div>
+    
+  </form>

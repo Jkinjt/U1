@@ -1,0 +1,27 @@
+<h3>Listado de Proveedores</h3>
+<button type="button" id="addProveedores" class="btn btn-success" routerLink="/addProve">Añadir proveedor</button>
+<table  class="table table-success table-striped">
+    <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo electronico</th>
+        <th scope="col">Telefono</th>
+    </tr>
+    <tr *ngFor="let proveedor of proveedores">
+        <th scope="col">{{proveedor.nombre}}</th>
+        <th scope="col">{{proveedor.email}}</th>
+        <th scope="col">{{proveedor.telefono}}</th>
+        <th>
+            <!--routerLink="/editProveedor/{{proveedor.$key}}"-->
+            <button type="button" class="btn btn-success"
+            routerLink="/editProveedor/{{proveedor.$key}}">Editar</button>
+                
+        </th>
+        <th>
+            <button class="btn btn-danger" 
+            (click)="delPresupuesto(proveedor.$key)">Eliminar</button>
+        </th>
+        
+    </tr>
+  </table>
+
+
